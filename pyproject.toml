@@ -56,7 +56,7 @@ black test_proj/
 migrate = "python test_proj/manage.py migrate"
 runserver = "python test_proj/manage.py runserver"
 sort-import = "isort test_proj/ --diff"
-check-settings = "echo abcdefg"
+check-settings = "PYTHONPATH=tools/check_settings python -m check_settings test_proj/test_proj/settings"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

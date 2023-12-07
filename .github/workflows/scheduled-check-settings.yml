@@ -49,13 +49,3 @@ jobs:
           TITLE: 不要と思われる設定を検出しました
           BODY: |
             ${{join(steps.run.outputs.*, '\n')}}
-
-#      - name: create an issue
-#        if: failure()
-#        uses: JasonEtco/create-an-issue@v2
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          MESSAGE: ${{join(steps.run.outputs.*, '\n')}}
-#        with:
-#          filename: .github/setting-issue.md
-
