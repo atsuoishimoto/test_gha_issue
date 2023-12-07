@@ -93,6 +93,7 @@ def main(settings_dir):
             print("- "+name)
         return True
     else:
+        print("Noerror")
         return False
 
 if __name__ == "__main__":
