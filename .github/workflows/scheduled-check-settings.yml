@@ -34,7 +34,7 @@ jobs:
             echo 'result<<EOF'
             poetry run task check-settings
             echo 'EOF'
-          } >> $GITHUB_OUTPUTA
+          } >> $GITHUB_OUTPUT
 
       - name: create an issue
 #        if: failure()
