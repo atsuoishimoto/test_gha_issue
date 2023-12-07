@@ -154,8 +154,8 @@ LOGGING = {
 # Sentry-SDK #
 ##############
 
-SENTRY_DSN = ""
-APP_VERSION = os.environ.get("APP_VERSION", "local")
+#SENTRY_DSN = ""
+#APP_VERSION = os.environ.get("APP_VERSION", "local")
 
 
 ####################
@@ -163,4 +163,4 @@ APP_VERSION = os.environ.get("APP_VERSION", "local")
 ####################
 
 
-ABCDDDELJNKJNFAKJN=1
+#ABCDDDELJNKJNFAKJN=1
