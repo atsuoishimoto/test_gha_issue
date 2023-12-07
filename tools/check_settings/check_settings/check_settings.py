@@ -88,9 +88,9 @@ def main(settings_dir):
     setting_names = get_setting_names(settings_dir)
     unused = sorted(setting_names - seen)
     if unused:
-        print("未使用の可能性があるsettings:")
+        print("未使用の可能性がある変数名:")
         for name in unused:
-            print(name)
+            print("- "+name)
         return True
     else:
         print("未使用の可能性がある項目は見つかりませんでした")
