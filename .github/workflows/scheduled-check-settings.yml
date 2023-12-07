@@ -6,7 +6,7 @@ on:
 
 jobs:
   job1:
-    name: Update Poetry Library
+    name: Detect unused setting
     permissions:
       issues: write
     runs-on: ubuntu-latest
