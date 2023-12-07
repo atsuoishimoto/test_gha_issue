@@ -17,7 +17,7 @@ def iter_syspath(paths, settings_dir):
             for child in path.iterdir():
                 rel = child.relative_to(path)
                 if rel.match(".*"):
-                    print("skippeing", child)
+                    print("skipping", child, file=sys.stderr)
                     continue
 
                 if child.is_dir():
@@ -78,14 +78,12 @@ def main(settings_dir):
         for n in iter_syspath(paths, Path(settings_dir)):
             fut = e.submit(find_name, n, settings_dir)
             fut.add_done_callback(done)
-            print(f"Submitted {n}...")
+            print(f"Submitted {n}...", file=sys.stderr)
 
         for n in iter_conffiles(Path(".").absolute()):
             fut = e.submit(find_name, n, settings_dir)
             fut.add_done_callback(done)
-            print(f"Submitted {n}...")
-
-    print("")
+            print(f"Submitted {n}...", file=sys.stderr)
 
     setting_names = get_setting_names(settings_dir)
     unused = sorted(setting_names - seen)
