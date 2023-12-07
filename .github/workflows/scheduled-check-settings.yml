@@ -35,10 +35,9 @@ jobs:
             poetry run task check-settings
             echo 'EOF'
           } >> $GITHUB_OUTPUTA
-          false
 
       - name: create an issue
-        if: failure()
+#        if: failure()
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
