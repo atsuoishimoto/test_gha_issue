@@ -1,0 +1,13 @@
+{
+  "revision": "fab69dd45410f9b20913a69ebb6f8c2c4cbe7f21",
+  "template": "git@github.com:Nikkei/django-project-template.git",
+  "variables": {
+    "_checkout": "check_settings",
+    "_output_dir": "/Users/ishimoto/wk/qqq",
+    "_repo_dir": "/Users/ishimoto/.cookiecutters/django-project-template",
+    "_template": "git@github.com:Nikkei/django-project-template.git",
+    "project_name": "test_proj",
+    "repo_name": "test_repo",
+    "subdomain": "asdfa"
+  }
+}
