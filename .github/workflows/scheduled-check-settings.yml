@@ -47,7 +47,7 @@ jobs:
         run: |
           echo aaaa $BODY bbbb
           python3 -c "import os;print(repr(os.environ['BODY']))"
-          if [[ $BODY != '' ]]; then
+          if [[ $BODY != '\n' ]]; then
             echo abcdefgh
             new_issue_url=$(gh issue create \
               --title "$TITLE" \
