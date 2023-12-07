@@ -46,6 +46,7 @@ jobs:
             ${{join(steps.run.outputs.*, '\n')}}
         run: |
           echo aaaa $BODY bbbb
+          python3 -c "import os;print(repr(os.environ('BODY')))"
           if [[ $BODY != '' ]]; then
             echo abcdefgh
             new_issue_url=$(gh issue create \
