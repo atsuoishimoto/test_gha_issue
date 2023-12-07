@@ -30,22 +30,24 @@ jobs:
 
       - name: Run check-settings
         id: run
-        continue-on-error: true
         run: |
           {
             echo 'result<<EOF'
-            poetry run task check-settings || true
+            poetry run task check-settings
             echo 'EOF'
           } >> $GITHUB_OUTPUT
 
       - name: Create team sync issue
-        run: |
-          new_issue_url=$(gh issue create \
-            --title "$TITLE" \
-            --body "$BODY")
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          TITLE: 不要と思われる設定を検出しました
+          TITLE: 未使用の可能性がある設定を検出しました
           BODY: |
             ${{join(steps.run.outputs.*, '\n')}}
+        run: |
+          echo $BODY
+          if [[ $BODY == '' ]]
+            new_issue_url=$(gh issue create \
+              --title "$TITLE" \
+              --body "$BODY")
+          fi

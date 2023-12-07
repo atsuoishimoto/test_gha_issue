@@ -93,7 +93,6 @@ def main(settings_dir):
             print("- "+name)
         return True
     else:
-        print("未使用の可能性がある項目は見つかりませんでした")
         return False
 
 if __name__ == "__main__":
