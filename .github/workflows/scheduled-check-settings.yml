@@ -7,7 +7,8 @@ on:
 jobs:
   job1:
     name: Update Poetry Library
-    permissions: write-all
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -45,9 +46,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          TITLE: Team sync
+          TITLE: 不要と思われる設定を検出しました
           BODY: |
-            ### Agenda
+            ${{join(steps.run.outputs.*, '\n')}}
 
 #      - name: create an issue
 #        if: failure()
