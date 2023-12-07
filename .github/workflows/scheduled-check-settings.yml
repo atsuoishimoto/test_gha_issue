@@ -46,7 +46,7 @@ jobs:
             ${{join(steps.run.outputs.*, '\n')}}
         run: |
           echo $BODY
-          if [[ $BODY == '' ]]; then
+          if [[ $BODY != '\n' ]]; then
             new_issue_url=$(gh issue create \
               --title "$TITLE" \
               --body "$BODY")
