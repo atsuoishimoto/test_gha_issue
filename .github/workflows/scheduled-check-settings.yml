@@ -36,12 +36,24 @@ jobs:
             echo 'EOF'
           } >> $GITHUB_OUTPUT
 
-      - name: create an issue
-#        if: failure()
-        uses: JasonEtco/create-an-issue@v2
+      - name: Create team sync issue
+        run: |
+          new_issue_url=$(gh issue create \
+            --title "$TITLE" \
+            --body "$BODY")
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: ${{join(steps.run.outputs.*, '\n')}}
-        with:
-          filename: .github/setting-issue.md
+          GH_REPO: ${{ github.repository }}
+          TITLE: Team sync
+          BODY: |
+            ### Agenda
+
+#      - name: create an issue
+#        if: failure()
+#        uses: JasonEtco/create-an-issue@v2
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          MESSAGE: ${{join(steps.run.outputs.*, '\n')}}
+#        with:
+#          filename: .github/setting-issue.md
 
