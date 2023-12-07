@@ -22,7 +22,9 @@ jobs:
           architecture: x64
 
       - name: Setup poetry env
-        run: poetry env use $(which python3)
+        run: |
+          poetry env use $(which python3)
+          poetry install --no-ansi
 
       - name: Run check-settings
         id: run
