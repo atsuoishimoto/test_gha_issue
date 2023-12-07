@@ -43,5 +43,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: ${{join(steps.run.outputs.*, '\n')}}
         with:
-          filename: .github/workflows/setting-issue.md
+          filename: .github/setting-issue.md
 
