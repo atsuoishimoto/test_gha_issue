@@ -1,5 +1,4 @@
-name: scheduled-poetry-update
-
+name: scheduled-check-settings
 on:
   schedule:
     - cron: '0 0 1 */6 *' # 半年ごとに一度
