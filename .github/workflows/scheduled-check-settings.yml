@@ -33,7 +33,7 @@ jobs:
         run: |
           {
             echo 'result<<EOF'
-            poetry run task check-settings || echo "ERROR"
+            poetry run task check-settings || true
             echo 'EOF'
           } >> $GITHUB_OUTPUT
 
